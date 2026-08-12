@@ -13,10 +13,10 @@
   <!-- Fonts: Nugros (custom @font-face) loaded first, then framework → project overrides. -->
   <link rel="preload" href="assets/fonts/Nugros-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Nugros-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/framework.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/fonts.css?v=d00f1644">
+  <link rel="stylesheet" href="css/framework.css?v=1a765f0c">
+  <link rel="stylesheet" href="css/variables.css?v=402f79dd">
+  <link rel="stylesheet" href="css/project.css?v=17f2c04a">
   <!-- Swiper.js — required by the flwr swiper gallery (data-flwr="swiper") -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <!-- Three.js for the self-hosted reeded-glass hero overlay (n58-hero-glass.js).
@@ -299,7 +299,7 @@
           <!-- Slide 1 · Nueva Tarjeta -->
           <article class="flwr_swiper_slide n58-news-popup_slide" data-n58-feature="tarjetas">
             <div class="n58-news-popup_media">
-              <img class="n58-news-popup_img" src="assets/images/photos/tarjeta-bolsillo.webp" alt="Tarjeta de débito N58 en el bolsillo" loading="lazy" decoding="async">
+              <img class="n58-news-popup_img" src="assets/images/photos/tarjeta.webp" alt="Tarjeta de débito N58 en la mano" loading="lazy" decoding="async">
             </div>
             <div class="n58-news-popup_body">
               <p class="f-text-small"><span class="n58-badge is-core f-text-color-strong">Anuncio</span></p>
@@ -436,7 +436,7 @@
           <!-- Mobile-only framed photo (hidden ≥992px, where the coins take over). -->
           <div class="home-split_media n58-hero_media">
             <div class="home-media">
-              <img src="assets/images/photos/tarjeta-bolsillo.webp" alt="Tarjeta N58 en el bolsillo del jean" class="home-media_img" loading="lazy">
+              <img src="assets/images/photos/n58-hero-image.webp" alt="Pareja revisando sus cuentas N58 desde una tableta en casa" class="home-media_img" loading="lazy">
             </div>
           </div>
         </div>
@@ -480,176 +480,53 @@
       </div>
     </section>
 
-    <!-- ════════════════ 02 · NOVEDADES — post-hero news / announcements swiper ════════════════
-         An infinite, autoplaying flwr swiper whose
-         slides are DELIBERATELY heterogeneous — every card is a different layout
-         (announcement, product split, KPI, team note, feature list, app CTA,
-         editorial photo). Each card sizes itself from its .is-* width in
-         project.css (§ NOVEDADES). Native Swiper navigation, dragging and loop
-         all share the same interaction model. -->
-    <section class="f-section-lg f-mode-dark n58-news" aria-label="Novedades">
-      <div class="n58-news_swiper" data-flwr="swiper"
-           data-flwr-swiper-loop="true"
-           data-flwr-swiper-autoplay="true"
-           data-flwr-swiper-autoplay-delay="2800"
-           data-flwr-swiper-speed="650">
+    <!-- ════════════════ 06.5 · GALERÍA — circular arch marquee ════════════════ -->
+    <section class="f-section-lg f-mode-dark n58-gallery-section" aria-label="Galería" data-n58-arch-gallery-section>
+      <div class="n58-container n58-gallery-head n58-reveal f-items-center f-text-center">
+        <p class="f-text-small f-text-color-accent">Galería</p>
+        <h2 class="f-text-h1 f-text-color-strong">Tu banco en cada momento</h2>
+      </div>
 
-        <!-- Head: eyebrow + title + prev/next arrows -->
-        <div class="n58-news_head n58-reveal">
-          <div class="n58-news_head-text">
-            <p class="f-text-small f-text-color-accent">Novedades</p>
-            <h2 class="f-text-h1">Lo último<br>en N58</h2>
+      <!-- Gallery. DESKTOP: the draggable flwr marquee (continuous + drag-scrub) —
+           unchanged. MOBILE (≤991px): the init script near the end of <body>
+           swaps this for a native scroll-snap scroller (auto-drift + one-card
+           swipe) so touch never fights the page scroll. -->
+      <div class="n58-arch-marquee n58-gallery-marquee flwr_marquee_wrap n58-reveal is-2" data-flwr="marquee"
+           data-flwr-marquee-draggable="true"
+           data-flwr-marquee-hover-pause="true"
+           data-flwr-marquee-hover-ease="true"
+           data-flwr-marquee-respect-prm="false"
+           data-flwr-marquee-speed="55000"
+           data-n58-arrow-prev="assets/images/icons/left-arrow-green.svg"
+           data-n58-arrow-next="assets/images/icons/right-arrow-green.svg">
+        <div class="flwr_marquee_track">
+          <div class="n58-gallery-slide n58-arch-slide">
+            <figure class="n58-gallery-card f-notch f-notch-lg">
+              <img src="assets/images/photos/hero-personas.webp" alt="Banca en línea desde el celular" loading="lazy" decoding="async">
+              <figcaption class="n58-gallery-cap">Banca en línea</figcaption>
+            </figure>
           </div>
-          <div class="n58-news_nav">
-            <button type="button" class="flwr_swiper_arrow n58-gallery-arrow" data-flwr-target="prev" aria-label="Anterior">
-              <img src="assets/images/icons/left-arrow-green.svg" alt="" aria-hidden="true">
-            </button>
-            <button type="button" class="flwr_swiper_arrow n58-gallery-arrow" data-flwr-target="next" aria-label="Siguiente">
-              <img src="assets/images/icons/right-arrow-green.svg" alt="" aria-hidden="true">
-            </button>
+          <div class="n58-gallery-slide n58-arch-slide">
+            <figure class="n58-gallery-card f-notch f-notch-lg">
+              <img src="assets/images/photos/pago-movil.webp" alt="Pago Móvil al instante" loading="lazy" decoding="async">
+              <figcaption class="n58-gallery-cap">Pago Móvil</figcaption>
+            </figure>
           </div>
-        </div>
-
-        <!-- Slider viewport + track. .n58-reveal is-2 rises the whole slider in
-             after the heading (Swiper transforms the inner track, not this wrap,
-             so the entrance never fights the auto-scroll). -->
-        <div class="flwr_swiper_wrap n58-news_wrap n58-reveal is-2">
-          <div class="flwr_swiper_track n58-news_track">
-
-            <!-- SLIDE 1 · TEAM — near full-width employee photo (humanizing) -->
-            <article class="flwr_swiper_slide n58-news-slide is-teamwide is-bordered f-mode-dark">
-              <img class="n58-news-edi_img" src="assets/images/photos/equipo-reunion.webp" alt="Equipo de N58 Banco Digital reunido en la oficina" loading="lazy" decoding="async">
-              <div class="n58-news-wide_cap">
-                <p class="f-text-small f-text-color-accent">Nuestro equipo</p>
-                <h3 class="f-text-h2 f-text-color-strong">Detrás de tu banco<br>digital, gente real</h3>
-                <p class="f-text-body f-text-color-muted f-max-w-40ch">Un equipo venezolano que construye, escucha y responde — para que tu banca se sienta cercana.</p>
-                <div class="f-flex f-flex-wrap f-gap-3">
-                  <a href="conocenos.html" class="flwr_button_primary" data-flwr-trigger="hover focus"><span data-flwr-target="label">Conócenos</span></a>
-                </div>
-              </div>
-            </article>
-
-            <!-- SLIDE 2 · ANNOUNCEMENT (dark purple — the ONLY dark-purple slide) -->
-            <article class="flwr_swiper_slide n58-news-slide is-announce is-bordered f-mode-dark" data-n58-feature="tarjetas">
-              <p class="f-text-small"><span class="n58-badge is-core f-text-color-strong">Anuncio</span></p>
-              <div class="n58-news-slide_body">
-                <h3 class="f-text-h2 f-text-color-strong">Tu nueva Tarjeta N58 ya está aquí</h3>
-                <p class="f-text-body f-text-color-muted">Débito internacional, 100% digital y lista para acompañarte a donde vayas.</p>
-              </div>
-              <div class="f-flex f-flex-wrap f-gap-3">
-                <a href="productos-personas.html" class="flwr_button_primary" data-flwr-trigger="hover focus"><span data-flwr-target="label">Solicítala</span></a>
-              </div>
-            </article>
-
-            <!-- SLIDE 3 · PRODUCT SPLIT (cream + main border) -->
-            <article class="flwr_swiper_slide n58-news-slide is-product is-bordered f-mode-light" data-n58-feature="tarjetas">
-              <div class="n58-news-prod_media">
-                <img src="assets/images/photos/tarjeta-bolsillo.webp" alt="Tarjeta de débito N58 en el bolsillo" loading="lazy" decoding="async">
-              </div>
-              <div class="n58-news-prod_copy">
-                <p class="f-text-small"><span class="n58-badge is-alternate f-text-color-strong">Producto</span></p>
-                <h3 class="f-text-h3">Débito<br>internacional</h3>
-                <ul class="n58-news-prod_list">
-                  <li>Aceptación mundial Maestro</li>
-                  <li>Sin comisión de apertura</li>
-                  <li>Congélala desde la App</li>
-                </ul>
-                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">Ver detalles</span></a>
-              </div>
-            </article>
-
-            <!-- SLIDE 4 · KPI / STAT (main lime green) -->
-            <article class="flwr_swiper_slide n58-news-slide is-stat is-lime f-mode-light">
-              <p class="f-text-small f-text-color-strong">Comunidad</p>
-              <p class="n58-news-stat_num">+50<span>mil</span></p>
-              <p class="f-text-body f-text-color-strong">cuentas abiertas 100% digital, sin pisar una agencia.</p>
-            </article>
-
-            <!-- SLIDE 5 · PEOPLE — second employee photo (humanizing) -->
-            <article class="flwr_swiper_slide n58-news-slide is-people is-bordered f-mode-dark">
-              <img class="n58-news-edi_img" src="assets/images/photos/equipo-socios.webp" alt="Colaboradores de N58 conversando" loading="lazy" decoding="async">
-              <div class="n58-news-edi_cap">
-                <p class="f-text-small f-text-color-accent">Cultura N58</p>
-                <p class="f-text-h4 f-text-color-strong">Le hablamos claro<br>a la gente.</p>
-              </div>
-            </article>
-
-            <!-- SLIDE 6 · APP CTA (main lime green) -->
-            <article class="flwr_swiper_slide n58-news-slide is-app is-lime f-mode-light" data-n58-feature="app-movil">
-              <span class="n58-news-app_ico"><img src="assets/images/icons/phone-cream.svg" alt="" aria-hidden="true"></span>
-              <div class="n58-news-slide_body">
-                <h3 class="f-text-h3 f-text-color-strong">Tu banco en el bolsillo</h3>
-                <p class="f-text-body f-text-color-main">Descarga la App N58 y abre tu cuenta en minutos.</p>
-              </div>
-              <div class="n58-news-app_stores">
-                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">App Store</span></a>
-                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">Google Play</span></a>
-              </div>
-            </article>
-
-            <!-- SLIDE 7 · TEAM QUOTE (cream + main border) -->
-            <article class="flwr_swiper_slide n58-news-slide is-team is-bordered f-mode-light">
-              <div class="n58-news-team_media">
-                <img src="assets/images/photos/conocenos-mision.webp" alt="Equipo de N58 Banco Digital" loading="lazy" decoding="async">
-              </div>
-              <div class="n58-news-team_quote">
-                <p class="f-text-small f-text-color-accent">Detrás de N58</p>
-                <blockquote class="f-text-h4">“Construimos el banco que a nosotros mismos nos gustaría usar.”</blockquote>
-                <p class="f-text-small f-text-color-muted">— El equipo N58</p>
-              </div>
-            </article>
-
-            <!-- SLIDE 8 · FEATURE LIST (ink) -->
-            <article class="flwr_swiper_slide n58-news-slide is-features is-bordered f-mode-dark">
-              <h3 class="f-text-h3 f-text-color-strong">¿Por qué<br>N58?</h3>
-              <ul class="n58-news-feat_list">
-                <li class="n58-news-feat">
-                  <span class="n58-news-feat_ico"><img src="assets/images/icons/swap-black.svg" alt="" aria-hidden="true"></span>
-                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Al instante</strong> Pago Móvil y transferencias en segundos.</span>
-                </li>
-                <li class="n58-news-feat">
-                  <span class="n58-news-feat_ico"><img src="assets/images/icons/lock-black.svg" alt="" aria-hidden="true"></span>
-                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Seguro</strong> Tu dinero protegido con verificación en cada paso.</span>
-                </li>
-                <li class="n58-news-feat">
-                  <span class="n58-news-feat_ico"><img src="assets/images/icons/profile-black.svg" alt="" aria-hidden="true"></span>
-                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Para todos</strong> Una banca simple, clara y accesible.</span>
-                </li>
-              </ul>
-            </article>
-
-            <!-- SLIDE 9 · EDITORIAL PHOTO (full-bleed + caption) -->
-            <article class="flwr_swiper_slide n58-news-slide is-editorial is-bordered f-mode-dark">
-              <img class="n58-news-edi_img" src="assets/images/photos/metro-skate.webp" alt="Jóvenes usando N58 en la ciudad" loading="lazy" decoding="async">
-              <div class="n58-news-edi_cap">
-                <p class="f-text-small f-text-color-accent">Nuestra gente</p>
-                <p class="f-text-h4 f-text-color-strong">Hecho en Venezuela, para venezolanos.</p>
-              </div>
-            </article>
-
+          <div class="n58-gallery-slide n58-arch-slide">
+            <figure class="n58-gallery-card f-notch f-notch-lg">
+              <img src="assets/images/photos/operaciones.webp" alt="Operaciones cambiarias seguras" loading="lazy" decoding="async">
+              <figcaption class="n58-gallery-cap">Operaciones cambiarias</figcaption>
+            </figure>
+          </div>
+          <div class="n58-gallery-slide n58-arch-slide">
+            <figure class="n58-gallery-card f-notch f-notch-lg">
+              <img src="assets/images/photos/pago-servicios.webp" alt="Paga tus servicios fácilmente" loading="lazy" decoding="async">
+              <figcaption class="n58-gallery-cap">Paga tus servicios</figcaption>
+            </figure>
           </div>
         </div>
-
       </div>
     </section>
-    <script>
-      /* Keep autoplay running after arrow, pointer and keyboard interaction.
-         Swiper owns the loop, dragging and navigation; no competing transform. */
-      (function () {
-        var el = document.querySelector('.n58-news_wrap');
-        if (!el) return;
-        (function ready(tries) {
-          var sw = el.swiper;
-          if (!sw) {
-            if (tries < 60) setTimeout(function () { ready(tries + 1); }, 100);
-            return;
-          }
-          sw.params.autoplay.disableOnInteraction = false;
-          sw.update();
-          if (sw.autoplay && !sw.autoplay.running) sw.autoplay.start();
-        })(0);
-      })();
-    </script>
 
     <!-- ════════════════ 03 · PAGO MÓVIL [light] ════════════════ -->
     <section class="f-section-lg">
@@ -888,53 +765,176 @@
       </div>
     </section>
 
-    <!-- ════════════════ 06.5 · GALERÍA — circular arch marquee ════════════════ -->
-    <section class="f-section-lg f-mode-dark n58-gallery-section" aria-label="Galería" data-n58-arch-gallery-section>
-      <div class="n58-container n58-gallery-head n58-reveal f-items-center f-text-center">
-        <p class="f-text-small f-text-color-accent">Galería</p>
-        <h2 class="f-text-h1 f-text-color-strong">Tu banco en cada momento</h2>
-      </div>
+    <!-- ════════════════ 02 · NOVEDADES — post-hero news / announcements swiper ════════════════
+         An infinite, autoplaying flwr swiper whose
+         slides are DELIBERATELY heterogeneous — every card is a different layout
+         (announcement, product split, KPI, team note, feature list, app CTA,
+         editorial photo). Each card sizes itself from its .is-* width in
+         project.css (§ NOVEDADES). Native Swiper navigation, dragging and loop
+         all share the same interaction model. -->
+    <section class="f-section-lg f-mode-dark n58-news" aria-label="Novedades">
+      <div class="n58-news_swiper" data-flwr="swiper"
+           data-flwr-swiper-loop="true"
+           data-flwr-swiper-autoplay="true"
+           data-flwr-swiper-autoplay-delay="2800"
+           data-flwr-swiper-speed="650">
 
-      <!-- Gallery. DESKTOP: the draggable flwr marquee (continuous + drag-scrub) —
-           unchanged. MOBILE (≤991px): the init script near the end of <body>
-           swaps this for a native scroll-snap scroller (auto-drift + one-card
-           swipe) so touch never fights the page scroll. -->
-      <div class="n58-arch-marquee n58-gallery-marquee flwr_marquee_wrap n58-reveal is-2" data-flwr="marquee"
-           data-flwr-marquee-draggable="true"
-           data-flwr-marquee-hover-pause="true"
-           data-flwr-marquee-hover-ease="true"
-           data-flwr-marquee-respect-prm="false"
-           data-flwr-marquee-speed="55000"
-           data-n58-arrow-prev="assets/images/icons/left-arrow-green.svg"
-           data-n58-arrow-next="assets/images/icons/right-arrow-green.svg">
-        <div class="flwr_marquee_track">
-          <div class="n58-gallery-slide n58-arch-slide">
-            <figure class="n58-gallery-card f-notch f-notch-lg">
-              <img src="assets/images/photos/hero-personas.webp" alt="Banca en línea desde el celular" loading="lazy" decoding="async">
-              <figcaption class="n58-gallery-cap">Banca en línea</figcaption>
-            </figure>
+        <!-- Head: eyebrow + title + prev/next arrows -->
+        <div class="n58-news_head n58-reveal">
+          <div class="n58-news_head-text">
+            <p class="f-text-small f-text-color-accent">Novedades</p>
+            <h2 class="f-text-h1">Lo último<br>en N58</h2>
           </div>
-          <div class="n58-gallery-slide n58-arch-slide">
-            <figure class="n58-gallery-card f-notch f-notch-lg">
-              <img src="assets/images/photos/pago-movil.webp" alt="Pago Móvil al instante" loading="lazy" decoding="async">
-              <figcaption class="n58-gallery-cap">Pago Móvil</figcaption>
-            </figure>
-          </div>
-          <div class="n58-gallery-slide n58-arch-slide">
-            <figure class="n58-gallery-card f-notch f-notch-lg">
-              <img src="assets/images/photos/operaciones.webp" alt="Operaciones cambiarias seguras" loading="lazy" decoding="async">
-              <figcaption class="n58-gallery-cap">Operaciones cambiarias</figcaption>
-            </figure>
-          </div>
-          <div class="n58-gallery-slide n58-arch-slide">
-            <figure class="n58-gallery-card f-notch f-notch-lg">
-              <img src="assets/images/photos/pago-servicios.webp" alt="Paga tus servicios fácilmente" loading="lazy" decoding="async">
-              <figcaption class="n58-gallery-cap">Paga tus servicios</figcaption>
-            </figure>
+          <div class="n58-news_nav">
+            <button type="button" class="flwr_swiper_arrow n58-gallery-arrow" data-flwr-target="prev" aria-label="Anterior">
+              <img src="assets/images/icons/left-arrow-green.svg" alt="" aria-hidden="true">
+            </button>
+            <button type="button" class="flwr_swiper_arrow n58-gallery-arrow" data-flwr-target="next" aria-label="Siguiente">
+              <img src="assets/images/icons/right-arrow-green.svg" alt="" aria-hidden="true">
+            </button>
           </div>
         </div>
+
+        <!-- Slider viewport + track. .n58-reveal is-2 rises the whole slider in
+             after the heading (Swiper transforms the inner track, not this wrap,
+             so the entrance never fights the auto-scroll). -->
+        <div class="flwr_swiper_wrap n58-news_wrap n58-reveal is-2">
+          <div class="flwr_swiper_track n58-news_track">
+
+            <!-- SLIDE 1 · TEAM — near full-width employee photo (humanizing) -->
+            <article class="flwr_swiper_slide n58-news-slide is-teamwide is-bordered f-mode-dark">
+              <img class="n58-news-edi_img" src="assets/images/photos/equipo-reunion.webp" alt="Equipo de N58 Banco Digital reunido en la oficina" loading="lazy" decoding="async">
+              <div class="n58-news-wide_cap">
+                <p class="f-text-small f-text-color-accent">Nuestro equipo</p>
+                <h3 class="f-text-h2 f-text-color-strong">Detrás de tu banco<br>digital, gente real</h3>
+                <p class="f-text-body f-text-color-muted f-max-w-40ch">Un equipo venezolano que construye, escucha y responde — para que tu banca se sienta cercana.</p>
+                <div class="f-flex f-flex-wrap f-gap-3">
+                  <a href="conocenos.html" class="flwr_button_primary" data-flwr-trigger="hover focus"><span data-flwr-target="label">Conócenos</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- SLIDE 2 · ANNOUNCEMENT (dark purple — the ONLY dark-purple slide) -->
+            <article class="flwr_swiper_slide n58-news-slide is-announce is-bordered f-mode-dark" data-n58-feature="tarjetas">
+              <p class="f-text-small"><span class="n58-badge is-core f-text-color-strong">Anuncio</span></p>
+              <div class="n58-news-slide_body">
+                <h3 class="f-text-h2 f-text-color-strong">Tu nueva Tarjeta N58 ya está aquí</h3>
+                <p class="f-text-body f-text-color-muted">Débito internacional, 100% digital y lista para acompañarte a donde vayas.</p>
+              </div>
+              <div class="f-flex f-flex-wrap f-gap-3">
+                <a href="productos-personas.html" class="flwr_button_primary" data-flwr-trigger="hover focus"><span data-flwr-target="label">Solicítala</span></a>
+              </div>
+            </article>
+
+            <!-- SLIDE 3 · PRODUCT SPLIT (cream + main border) -->
+            <article class="flwr_swiper_slide n58-news-slide is-product is-bordered f-mode-light" data-n58-feature="tarjetas">
+              <div class="n58-news-prod_media">
+                <img src="assets/images/photos/tarjeta.webp" alt="Tarjeta de débito N58 en la mano" loading="lazy" decoding="async">
+              </div>
+              <div class="n58-news-prod_copy">
+                <p class="f-text-small"><span class="n58-badge is-alternate f-text-color-strong">Producto</span></p>
+                <h3 class="f-text-h3">Débito<br>internacional</h3>
+                <ul class="n58-news-prod_list">
+                  <li>Aceptación mundial Maestro</li>
+                  <li>Sin comisión de apertura</li>
+                  <li>Congélala desde la App</li>
+                </ul>
+                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">Ver detalles</span></a>
+              </div>
+            </article>
+
+            <!-- SLIDE 4 · KPI / STAT (main lime green) -->
+            <article class="flwr_swiper_slide n58-news-slide is-stat is-lime f-mode-light">
+              <p class="f-text-small f-text-color-strong">Comunidad</p>
+              <p class="n58-news-stat_num">+50<span>mil</span></p>
+              <p class="f-text-body f-text-color-strong">cuentas abiertas 100% digital, sin pisar una agencia.</p>
+            </article>
+
+            <!-- SLIDE 5 · PEOPLE — second employee photo (humanizing) -->
+            <article class="flwr_swiper_slide n58-news-slide is-people is-bordered f-mode-dark">
+              <img class="n58-news-edi_img" src="assets/images/photos/equipo-socios.webp" alt="Colaboradores de N58 conversando" loading="lazy" decoding="async">
+              <div class="n58-news-edi_cap">
+                <p class="f-text-small f-text-color-accent">Cultura N58</p>
+                <p class="f-text-h4 f-text-color-strong">Le hablamos claro<br>a la gente.</p>
+              </div>
+            </article>
+
+            <!-- SLIDE 6 · APP CTA (main lime green) -->
+            <article class="flwr_swiper_slide n58-news-slide is-app is-lime f-mode-light" data-n58-feature="app-movil">
+              <span class="n58-news-app_ico"><img src="assets/images/icons/phone-cream.svg" alt="" aria-hidden="true"></span>
+              <div class="n58-news-slide_body">
+                <h3 class="f-text-h3 f-text-color-strong">Tu banco en el bolsillo</h3>
+                <p class="f-text-body f-text-color-main">Descarga la App N58 y abre tu cuenta en minutos.</p>
+              </div>
+              <div class="n58-news-app_stores">
+                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">App Store</span></a>
+                <a href="productos-personas.html" class="flwr_button_primary is-invert" data-flwr-trigger="hover focus"><span data-flwr-target="label">Google Play</span></a>
+              </div>
+            </article>
+
+            <!-- SLIDE 7 · TEAM QUOTE (cream + main border) -->
+            <article class="flwr_swiper_slide n58-news-slide is-team is-bordered f-mode-light">
+              <div class="n58-news-team_media">
+                <img src="assets/images/photos/conocenos-mision.webp" alt="Equipo de N58 Banco Digital" loading="lazy" decoding="async">
+              </div>
+              <div class="n58-news-team_quote">
+                <p class="f-text-small f-text-color-accent">Detrás de N58</p>
+                <blockquote class="f-text-h4">“Construimos el banco que a nosotros mismos nos gustaría usar.”</blockquote>
+                <p class="f-text-small f-text-color-muted">— El equipo N58</p>
+              </div>
+            </article>
+
+            <!-- SLIDE 8 · FEATURE LIST (ink) -->
+            <article class="flwr_swiper_slide n58-news-slide is-features is-bordered f-mode-dark">
+              <h3 class="f-text-h3 f-text-color-strong">¿Por qué<br>N58?</h3>
+              <ul class="n58-news-feat_list">
+                <li class="n58-news-feat">
+                  <span class="n58-news-feat_ico"><img src="assets/images/icons/swap-black.svg" alt="" aria-hidden="true"></span>
+                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Al instante</strong> Pago Móvil y transferencias en segundos.</span>
+                </li>
+                <li class="n58-news-feat">
+                  <span class="n58-news-feat_ico"><img src="assets/images/icons/lock-black.svg" alt="" aria-hidden="true"></span>
+                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Seguro</strong> Tu dinero protegido con verificación en cada paso.</span>
+                </li>
+                <li class="n58-news-feat">
+                  <span class="n58-news-feat_ico"><img src="assets/images/icons/profile-black.svg" alt="" aria-hidden="true"></span>
+                  <span class="n58-news-feat_txt"><strong class="f-text-color-strong">Para todos</strong> Una banca simple, clara y accesible.</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- SLIDE 9 · EDITORIAL PHOTO (full-bleed + caption) -->
+            <article class="flwr_swiper_slide n58-news-slide is-editorial is-bordered f-mode-dark">
+              <img class="n58-news-edi_img" src="assets/images/photos/metro-skate.webp" alt="Jóvenes usando N58 en la ciudad" loading="lazy" decoding="async">
+              <div class="n58-news-edi_cap">
+                <p class="f-text-small f-text-color-accent">Nuestra gente</p>
+                <p class="f-text-h4 f-text-color-strong">Hecho en Venezuela, para venezolanos.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
       </div>
     </section>
+    <script>
+      /* Keep autoplay running after arrow, pointer and keyboard interaction.
+         Swiper owns the loop, dragging and navigation; no competing transform. */
+      (function () {
+        var el = document.querySelector('.n58-news_wrap');
+        if (!el) return;
+        (function ready(tries) {
+          var sw = el.swiper;
+          if (!sw) {
+            if (tries < 60) setTimeout(function () { ready(tries + 1); }, 100);
+            return;
+          }
+          sw.params.autoplay.disableOnInteraction = false;
+          sw.update();
+          if (sw.autoplay && !sw.autoplay.running) sw.autoplay.start();
+        })(0);
+      })();
+    </script>
 
     <!-- ════════════════ 06.6 · PRIVACIDAD — reeded-glass media band [dark] ════════════════
          Self-hosted 3D (n58-hero-glass.js, panel mode): a full-frame "Vidrio

@@ -687,7 +687,7 @@
     "audience": "Personas",
     "legacy_source": "tarjeta-maestro-personas.html",
     "hero_description": "La herramienta ideal para gestionar tus gastos diarios con comodidad, flexibilidad y seguridad.",
-    "image": "tarjeta-bolsillo.webp",
+    "image": "tarjeta.webp",
     "characteristics": [
       [
         "Acceso a fondos",
@@ -754,7 +754,7 @@
     "audience": "Empresas",
     "legacy_source": "tarjeta-maestro-empresas.html",
     "hero_description": "Facilita la gestión financiera diaria de tu empresa con una tarjeta de débito diseñada para tus necesidades empresariales.",
-    "image": "tarjeta-bolsillo.webp",
+    "image": "tarjeta.webp",
     "characteristics": [
       [
         "Acceso directo a fondos",
@@ -794,6 +794,83 @@
       "¿Cómo obtengo mi Tarjeta Maestro empresarial?",
       "¿Puedo asignar tarjetas a colaboradores?",
       "¿Cómo bloqueo la tarjeta en caso de pérdida?"
+    ],
+    "related_resources": [
+      [
+        "Límites diarios",
+        "limites-diarios.html",
+        "Revisa los montos máximos vigentes para cada tipo de operación."
+      ],
+      [
+        "Tarifas y comisiones",
+        "documentos-legales.html",
+        "Consulta costos, cargos y condiciones antes de operar."
+      ],
+      [
+        "Seguridad y prevención",
+        "documentos-legales.html",
+        "Conoce cómo proteger tu cuenta, tus datos y cada transacción."
+      ]
+    ],
+    "compliance_status": "pending-review"
+  },
+  {
+    "slug": "n-emprende-empresas",
+    "title": "N Emprende",
+    "audience": "Empresas",
+    "legacy_source": null,
+    "hero_description": "Si tu negocio ha sido afectado, N Emprende te acompaña con recursos para fortalecerlo: formación, mentorías, herramientas y un plan a tu medida.",
+    "image": "n-emprende.webp",
+    "characteristics": [
+      [
+        "Educación financiera",
+        "Formación para ordenar las cuentas de tu negocio y tomar mejores decisiones."
+      ],
+      [
+        "Mentorías personalizadas",
+        "Acompañamiento de nuestro equipo, según el momento en que esté tu negocio."
+      ],
+      [
+        "Herramientas digitales",
+        "Recursos para gestionar tu emprendimiento y llevarlo al día."
+      ],
+      [
+        "Diagnóstico del negocio",
+        "Analizamos tu negocio para entender qué necesita antes de proponer un plan."
+      ],
+      [
+        "Acompañamiento a medida",
+        "Un plan diseñado para tu caso, no una receta general."
+      ]
+    ],
+    "benefits": [
+      [
+        "Diagnóstico de tu negocio",
+        "Revisamos en qué punto estás antes de recomendarte nada."
+      ],
+      [
+        "Plan a tu medida",
+        "Diseñamos el acompañamiento según lo que arroje ese diagnóstico."
+      ],
+      [
+        "Mentorías y formación",
+        "Acceso a educación financiera, mentorías y herramientas digitales."
+      ],
+      [
+        "Opción de financiamiento",
+        "Si cumples con los criterios de evaluación, puedes optar por financiamiento a través de N Emprende."
+      ]
+    ],
+    "requirements": [
+      "Tener un negocio o emprendimiento en marcha.",
+      "Postularte escribiendo a info@n58bancodigital.com.",
+      "Cumplir con los criterios de evaluación de N Emprende."
+    ],
+    "faqs": [
+      "¿Cómo me postulo a N Emprende?",
+      "¿Cómo funciona el programa?",
+      "¿Qué incluye el acompañamiento?",
+      "¿N Emprende ofrece financiamiento?"
     ],
     "related_resources": [
       [
