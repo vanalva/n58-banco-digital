@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/fonts.css?v=d00f1644">
   <link rel="stylesheet" href="css/framework.css?v=1a765f0c">
   <link rel="stylesheet" href="css/variables.css?v=402f79dd">
-  <link rel="stylesheet" href="css/project.css?v=5cad7ce2">
+  <link rel="stylesheet" href="css/project.css?v=1f5dbe83">
   <!-- Swiper.js — required by the flwr swiper gallery (data-flwr="swiper") -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <!-- Three.js for the self-hosted reeded-glass hero overlay (n58-hero-glass.js).
@@ -128,7 +128,7 @@
               </ul>
             </li>
             <li><a href="productos-empresas.html#productos-inversiones" class="flwr_navbar_dropdown_item">Productos e Inversiones</a></li>
-            <li><a href="n-emprende-empresas.html" class="flwr_navbar_dropdown_item">N Emprende</a></li>
+            <li data-n58-feature="n-emprende"><a href="n-emprende-empresas.html" class="flwr_navbar_dropdown_item">N Emprende</a></li>
             <li data-n58-feature="creditos"><a href="productos-empresas.html#creditos" class="flwr_navbar_dropdown_item">Créditos</a></li>
             <li><a href="productos-empresas.html" class="flwr_navbar_dropdown_item">Ver todos los productos</a></li>
           </ul>
@@ -214,7 +214,7 @@
                 <a href="categoria-template.html" class="n58-fsmenu-sublink">Operaciones Cambiarias</a>
                 <a href="categoria-template.html" class="n58-fsmenu-sublink" data-n58-feature="tarjetas">Tarjetas</a>
                 <a href="categoria-template.html" class="n58-fsmenu-sublink">Productos e Inversiones</a>
-                <a href="n-emprende-empresas.html" class="n58-fsmenu-sublink">N Emprende</a>
+                <a href="n-emprende-empresas.html" class="n58-fsmenu-sublink" data-n58-feature="n-emprende">N Emprende</a>
                 <a href="categoria-template.html" class="n58-fsmenu-sublink" data-n58-feature="creditos">Créditos</a>
                 <a href="productos-empresas.html" class="n58-fsmenu-sublink">Ver todos los productos</a>
               </div>
@@ -311,10 +311,10 @@
             </div>
           </article>
 
-          <!-- Slide 1b · N Emprende. Untagged on purpose: versions can only take
-               things away, so this is what the empresas build shows in place of
-               the Tarjeta slide above, which that build strips. -->
-          <article class="flwr_swiper_slide n58-news-popup_slide">
+          <article class="flwr_swiper_slide n58-news-popup_slide" data-n58-feature="n-emprende">
+            <!-- Slide 1b · N Emprende. Tagged n-emprende: the client wants the whole
+                 programme held back until launch, so the prototype shows neither
+                 this nor the Tarjeta slide above. -->
             <div class="n58-news-popup_media">
               <img class="n58-news-popup_img" src="assets/images/photos/n-emprende.webp" alt="Emprendedora en su negocio" loading="lazy" decoding="async">
             </div>
@@ -758,15 +758,15 @@
       </div>
     </section>
 
-    <!-- ════════════════ 06.4 · N EMPRENDE [brand] ════════════════
-         Sits between the light products grid and the dark Spline block, so it
-         uses f-section-brand to land as a third colour note instead of a second
-         dark band. The programme explains itself in its own four steps on the
-         timeline rail built for conocenos — the homepage has not used that
-         component before, which is what makes the section read as new without
-         inventing any chrome. Eyebrow is plain accent text, not an n58-badge:
-         badges are for light sections. -->
-    <section class="f-section-lg f-section-brand" aria-label="N Emprende">
+    <section class="f-section-lg f-section-brand" aria-label="N Emprende" data-n58-feature="n-emprende">
+      <!-- ════════════════ 06.4 · N EMPRENDE [brand] ════════════════
+           Sits between the light products grid and the dark Spline block, so it
+           uses f-section-brand to land as a third colour note instead of a second
+           dark band. The programme explains itself in its own four steps on the
+           timeline rail built for conocenos — the homepage has not used that
+           component before, which is what makes the section read as new without
+           inventing any chrome. Eyebrow is plain accent text, not an n58-badge:
+           badges are for light sections. -->
       <div class="n58-container">
         <div class="f-flex f-flex-wrap f-justify-between f-items-end f-gap-4 f-margin-bottom-6">
           <div class="f-flex f-flex-column f-gap-2 n58-reveal">
